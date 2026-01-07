@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&family=Yantramanav:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.3.0/uicons-solid-rounded/css/uicons-solid-rounded.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.3.0/uicons-bold-rounded/css/uicons-bold-rounded.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Ear Care Capsule</title>
+    <style>
+        /* EarCare Product Color Variables */
+        :root {
+            --primary: #E74C3C;
+            --secondary: #F39C12;
+            --light: #FFB6B6;
+            --accent: #27AE60;
+            --background: #FDF6F0;
+            --text-dark: #2C3E50;
+            --text-light: #FFFFFF;
+            --coral-primary: #E74C3C;
+            --coral-secondary: #F39C12;
+            --coral-light: #FFE5E0;
+            --green-accent: #27AE60;
+            --success: #27AE60;
+            --warning: #F39C12;
+            /* Legacy color mappings for compatibility */
+            --purple-dark: #E74C3C;
+            --purple-medium: #E74C3C;
+            --purple-light: #FFE5E0;
+            --gold-accent: #27AE60;
+        }
+
+        /* Utility Classes */
+        .text-uricare-burgundy {
+            color: var(--primary);
+        }
+
+        .bg-gradient-faq {
+            background: linear-gradient(135deg, var(--background) 0%, #FFEEE8 100%);
+        }
+
+        .font-eczar {
+            font-family: 'Eczar', serif;
+        }
+
+        .font-yantra {
+            font-family: 'Yantramanav', sans-serif;
+        }
+
+        /* Container */
+        .main-container {
+            max-width: 450px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        @media (max-width: 450px) {
+            .main-container {
+                max-width: 100%;
+            }
+        }
+
+        /* Creative Logo Styles */
+        .creative-logo {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f1f0f0 0%, #eae5e5 100%);
+            border-radius: 50%;
+            overflow: visible;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: default;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Only apply hover effects on devices that support hover */
+        @media (hover: hover) and (pointer: fine) {
+            .creative-logo:hover {
+                transform: scale(1.1) rotate(12deg);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            }
+
+            .creative-logo:hover .wave {
+                animation-duration: 1s;
+            }
+
+            .creative-logo:hover .sound-waves::after {
+                content: '';
+                position: absolute;
+                left: -25px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 20px;
+                height: 2px;
+                background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.6));
+                animation: soundTrail 1s ease-out infinite;
+            }
+        }
+
+        .creative-logo:active {
+            transform: scale(1.05);
+        }
+
+        .creative-logo:focus {
+            outline: none;
+        }
+
+        .ear-symbol {
+            font-size: 1.5rem;
+            position: relative;
+            z-index: 2;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        }
+
+        .sound-waves {
+            position: absolute;
+            right: -35px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            z-index: 1;
+            width: 40px;
+            height: 30px;
+        }
+
+        .wave {
+            width: 5px;
+            background: linear-gradient(to bottom, rgba(139, 69, 19, 0.9), rgba(101, 67, 33, 0.4), rgba(62, 39, 35, 0.9));
+            border-radius: 1px;
+            animation: soundWaveFlow 2s ease-in-out infinite;
+            transform-origin: center;
+        }
+
+        .wave:nth-child(1) {
+            height: 6px;
+            animation-delay: 0s;
+        }
+
+        .wave:nth-child(2) {
+            height: 10px;
+            animation-delay: 0.1s;
+        }
+
+        .wave:nth-child(3) {
+            height: 14px;
+            animation-delay: 0.2s;
+        }
+
+        .wave:nth-child(4) {
+            height: 10px;
+            animation-delay: 0.3s;
+        }
+
+        .wave:nth-child(5) {
+            height: 6px;
+            animation-delay: 0.4s;
+        }
+
+        @keyframes soundWaveFlow {
+            0% {
+                opacity: 0.2;
+                transform: scaleY(0.3) translateX(-5px);
+            }
+
+            30% {
+                opacity: 0.8;
+                transform: scaleY(1) translateX(0px);
+            }
+
+            70% {
+                opacity: 1;
+                transform: scaleY(1.2) translateX(5px);
+            }
+
+            100% {
+                opacity: 0.1;
+                transform: scaleY(0.2) translateX(15px);
+            }
+        }
+
+        /* Enhanced sound wave effect on hover - moved to media query above */
+
+        @keyframes soundTrail {
+            0% {
+                width: 0px;
+                opacity: 0;
+            }
+
+            50% {
+                width: 15px;
+                opacity: 0.8;
+            }
+
+            100% {
+                width: 25px;
+                opacity: 0;
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
+
+        /* Advanced How to Use Section Animations */
+        @keyframes progressFlow {
+            0% {
+                width: 0%;
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                width: 100%;
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes stepReveal {
+            0% {
+                transform: translateY(50px) scale(0.8);
+                opacity: 0;
+            }
+
+            50% {
+                transform: translateY(20px) scale(0.9);
+                opacity: 0.5;
+            }
+
+            100% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes iconPulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.4);
+            }
+
+            50% {
+                transform: scale(1.1);
+                box-shadow: 0 0 0 10px rgba(231, 76, 60, 0);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
+            }
+        }
+
+        @keyframes clockTick {
+
+            0%,
+            100% {
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(90deg);
+            }
+
+            50% {
+                transform: rotate(180deg);
+            }
+
+            75% {
+                transform: rotate(270deg);
+            }
+        }
+
+        @keyframes waterDrop {
+
+            0%,
+            100% {
+                transform: translateY(0px) scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: translateY(-10px) scale(1.2);
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes calendarFlip {
+            0% {
+                transform: rotateY(0deg);
+            }
+
+            50% {
+                transform: rotateY(-90deg);
+            }
+
+            100% {
+                transform: rotateY(0deg);
+            }
+        }
+
+        @keyframes timelineProgress {
+            0% {
+                stroke-dashoffset: 100;
+            }
+
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        .step-card {
+            animation: stepReveal 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .step-card:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .step-card:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .step-card:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .icon-container {
+            animation: iconPulse 2s infinite;
+        }
+
+        .clock-hand {
+            animation: clockTick 4s linear infinite;
+        }
+
+        .water-icon {
+            animation: waterDrop 2s ease-in-out infinite;
+        }
+
+        .calendar-icon {
+            animation: calendarFlip 3s ease-in-out infinite;
+        }
+
+        .progress-line {
+            stroke-dasharray: 100;
+            animation: timelineProgress 3s ease-in-out infinite;
+        }
+
+        .floating-element {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .morphing-bg {
+            background: linear-gradient(45deg, var(--primary), var(--secondary), var(--accent), var(--primary));
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .interactive-timeline {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .interactive-timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 49%, rgba(255, 255, 255, 0.1) 50%, transparent 51%);
+            animation: shimmer 2s infinite;
+        }
+
+        /* Problem cause section */
+        .problem-section {
+            background: radial-gradient(circle at 20% 20%, rgba(231, 76, 60, 0.08), transparent 35%),
+                radial-gradient(circle at 80% 0%, rgba(243, 156, 18, 0.08), transparent 35%),
+                linear-gradient(135deg, #fffaf7 0%, #fff1ea 100%);
+        }
+
+        .problem-card {
+            --tilt-x: 0deg;
+            --tilt-y: 0deg;
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+            border: 1px solid rgba(231, 76, 60, 0.15);
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(255, 238, 232, 0.95));
+            box-shadow: 0 12px 30px rgba(231, 76, 60, 0.12), 0 8px 20px rgba(0, 0, 0, 0.04);
+            transform: perspective(1000px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)) translateY(0);
+            transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+        }
+
+        .problem-card:hover {
+            transform: perspective(1000px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)) translateY(-6px);
+            box-shadow: 0 16px 36px rgba(231, 76, 60, 0.18), 0 10px 24px rgba(0, 0, 0, 0.06);
+            border-color: rgba(243, 156, 18, 0.45);
+        }
+
+        .problem-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(231, 76, 60, 0.18), transparent 40%),
+                radial-gradient(circle at 80% 0%, rgba(243, 156, 18, 0.2), transparent 35%);
+            opacity: 0.25;
+            transition: opacity 0.35s ease;
+        }
+
+        .problem-card::after {
+            content: '';
+            position: absolute;
+            inset: -120%;
+            background: linear-gradient(120deg, transparent 40%, rgba(255, 255, 255, 0.3) 50%, transparent 60%);
+            transform: rotate(8deg);
+            opacity: 0;
+        }
+
+        .problem-card:hover::before {
+            opacity: 0.4;
+        }
+
+        .problem-card:hover::after {
+            animation: cardShimmer 1.4s ease forwards;
+        }
+
+        .problem-card img {
+            transition: transform 0.35s ease;
+        }
+
+        .problem-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .problem-card-active {
+            transform: perspective(1000px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)) translateY(-10px) scale(1.02);
+            border-color: rgba(231, 76, 60, 0.6);
+            box-shadow: 0 20px 50px rgba(231, 76, 60, 0.22), 0 10px 28px rgba(0, 0, 0, 0.1);
+        }
+
+        .problem-card-pressed {
+            transform: perspective(1000px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)) scale(0.98) !important;
+            transition: transform 0.1s ease !important;
+        }
+
+        .problem-card-active::after {
+            opacity: 1;
+            animation: cardShimmer 1s ease forwards;
+        }
+
+        .problem-chip {
+            background: linear-gradient(120deg, rgba(231, 76, 60, 0.12), rgba(243, 156, 18, 0.12));
+            border: 1px solid rgba(231, 76, 60, 0.2);
+            color: var(--text-dark);
+        }
+
+        @keyframes cardShimmer {
+            0% {
+                transform: translateX(-150%) rotate(10deg);
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 0.7;
+            }
+
+            100% {
+                transform: translateX(150%) rotate(10deg);
+                opacity: 0;
+            }
+        }
+    </style>
+
+</head>
+
+<body class="font-eczar"
+    style="min-height: 100vh; background: linear-gradient(135deg, var(--background) 0%, #FFFFFF 50%, var(--coral-light) 100%); color: var(--text-dark);">
+
+    <div class="w-full overflow-hidden main-container">
+        <!-- Header -->
+        <header class="text-white w-full overflow-hidden fixed top-0 left-0 right-0 z-50"
+            style="background: linear-gradient(135deg, var(--coral-primary) 0%, var(--primary) 50%, var(--light) 100%); border-bottom: 3px solid var(--coral-primary); max-width: 450px; margin: 0 auto;">
+
+            <div class="absolute top-0 left-0 right-0 h-1"
+                style="background-color: var(--coral-primary); opacity: 0.95;">
+            </div>
+
+            <div class="flex items-center justify-between gap-8 p-4">
+                <div class="flex items-center justify-center gap-8 max-[450px]:gap-3 flex-1">
+                    <div class="w-full flex flex-col items-center justify-center"
+                        style="background-color:rgba(255,255,255,0.2); border-radius: 15px; padding: 8px 16px; backdrop-filter: blur(10px); border: 2px solid rgba(255,255,255,0.3); box-shadow: 0 8px 25px rgba(0,0,0,0.1);">
+                        <div class="flex flex-row items-center justify-center gap-12 max-[450px]:gap-10">
+                            <div
+                                class="creative-logo glow-border w-8 h-8 rounded-full flex items-center justify-center shadow-brand border-2 border-brand-light border-opacity-30 overflow-visible max-[450px]:w-12 max-[450px]:h-12">
+                                <span class="ear-symbol">👂</span>
+                                <div class="sound-waves">
+                                    <div class="wave"></div>
+                                    <div class="wave"></div>
+                                    <div class="wave"></div>
+                                    <div class="wave"></div>
+                                    <div class="wave"></div>
+                                </div>
+                            </div>
+                            <div
+                                class="font-arya text-xl font-bold max-[450px]:text-2xl cursor-default text-white drop-shadow-lg text-center leading-tight transition-transform duration-300">
+                                <div class="flex items-center justify-center gap-2 max-[450px]:gap-1 hover:scale-105">
+                                    <span class="whitespace-nowrap text-white">Ear</span>
+                                    <span class="whitespace-nowrap text-white">Care</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Now Button -->
+                <div class="flex-shrink-0">
+                    <button onclick="scrollToContent()"
+                        class="inline-block text-black font-black px-5 py-3 rounded-xl text-sm shadow-lg transform hover:scale-105 transition-all duration-300 max-[450px]:px-3 max-[450px]:text-sm"
+                        style="background: var(--accent)">
+                        <div class="flex items-center gap-2">
+                            <span class="animate-bounce">🛒</span>
+                            <span class="max-[450px]:hidden">Order Now</span>
+                            <span class="md:hidden">Order</span>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button (visible only on mobile) -->
+                <button id="menuToggle" class="md:hidden flex-shrink-0 text-2xl p-2 rounded-lg transition-colors"
+                    style="background-color: var(--primary);"
+                    onmouseover="this.style.backgroundColor='var(--secondary)'"
+                    onmouseout="this.style.backgroundColor='var(--primary)'" onclick="toggleMobileMenu()">
+                    <span>☰</span>
+                </button>
+
+                <!-- Mobile Navigation Menu -->
+                <div id="mobileMenu"
+                    class="md:hidden fixed top-0 right-0 h-screen w-72 shadow-2xl z-50 transform translate-x-full transition-all duration-300"
+                    style="background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);">
+                    <nav class="flex flex-col gap-0 h-full overflow-y-auto">
+                        <!-- Close Button -->
+                        <div class="flex items-center justify-between p-4 border-b-2 sticky top-0"
+                            style="border-color: var(--accent); background-color: var(--primary);">
+                            <h3 class="text-white font-black text-lg">Menu</h3>
+                            <button onclick="toggleMobileMenu()" class="text-white text-2xl transition-colors"
+                                onmouseover="this.style.color='#D4AF37'" onmouseout="this.style.color='white'">
+                                ✕
+                            </button>
+                        </div>
+
+                        <!-- Navigation Items -->
+                        <a href="#home"
+                            class="text-white font-bold py-4 px-6 transition-all border-b flex items-center gap-3"
+                            style="border-color: rgba(212, 175, 55, 0.3);"
+                            onmouseover="this.style.backgroundColor='rgba(200, 90, 122, 0.5)'"
+                            onmouseout="this.style.backgroundColor='transparent'" onclick="toggleMobileMenu()">
+                            <span class="text-xl">🏠</span>
+                            <span>Home</span>
+                        </a>
+                        <a href="#introduction"
+                            class="text-white font-bold py-4 px-6 transition-all border-b flex items-center gap-3"
+                            style="border-color: rgba(212, 175, 55, 0.3);"
+                            onmouseover="this.style.backgroundColor='rgba(200, 90, 122, 0.5)'"
+                            onmouseout="this.style.backgroundColor='transparent'" onclick="toggleMobileMenu()">
+                            <span class="text-xl">📦</span>
+                            <span>Product</span>
+                        </a>
+                        <a href="#problems"
+                            class="text-white font-bold py-4 px-6 transition-all border-b flex items-center gap-3"
+                            style="border-color: rgba(212, 175, 55, 0.3);"
+                            onmouseover="this.style.backgroundColor='rgba(200, 90, 122, 0.5)'"
+                            onmouseout="this.style.backgroundColor='transparent'" onclick="toggleMobileMenu()">
+                            <span class="text-xl">⚠️</span>
+                            <span>Problems</span>
+                        </a>
+                        <a href="#offer"
+                            class="text-white font-bold py-4 px-6 transition-all border-b flex items-center gap-3"
+                            style="border-color: rgba(212, 175, 55, 0.3);"
+                            onmouseover="this.style.backgroundColor='rgba(200, 90, 122, 0.5)'"
+                            onmouseout="this.style.backgroundColor='transparent'" onclick="toggleMobileMenu()">
+                            <span class="text-xl">🎁</span>
+                            <span>Offer</span>
+                        </a>
+                        <a href="#faq"
+                            class="text-white font-bold py-4 px-6 transition-all border-b flex items-center gap-3"
+                            style="border-color: rgba(212, 175, 55, 0.3);"
+                            onmouseover="this.style.backgroundColor='rgba(200, 90, 122, 0.5)'"
+                            onmouseout="this.style.backgroundColor='transparent'" onclick="toggleMobileMenu()">
+                            <span class="text-xl">❓</span>
+                            <span>FAQ</span>
+                        </a>
+                        <a href="#reviews"
+                            class="text-white font-bold py-4 px-6 transition-all border-b flex items-center gap-3"
+                            style="border-color: rgba(212, 175, 55, 0.3);"
+                            onmouseover="this.style.backgroundColor='rgba(200, 90, 122, 0.5)'"
+                            onmouseout="this.style.backgroundColor='transparent'" onclick="toggleMobileMenu()">
+                            <span class="text-xl">⭐</span>
+                            <span>Reviews</span>
+                        </a>
+                        <a href="#contact" class="text-white font-bold py-4 px-6 transition-all flex items-center gap-3"
+                            onmouseover="this.style.backgroundColor='rgba(200, 90, 122, 0.5)'"
+                            onmouseout="this.style.backgroundColor='transparent'" onclick="toggleMobileMenu()">
+                            <span class="text-xl">🛒</span>
+                            <span>Order Now</span>
+                        </a>
+                    </nav>
+                </div>
+
+                <!-- Mobile Menu Overlay -->
+                <div id="menuOverlay"
+                    class="fixed inset-0 bg-black/0 z-40 md:hidden transition-all duration-300 pointer-events-none opacity-0"
+                    onclick="toggleMobileMenu()"></div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+
+       <!-- Hook section  -->
+        <section class="mt-20 max-w-[450px] mx-auto overflow-hidden">
+            <img src="./Image/Hero.png" alt="Ear Care Capsule Hook" class="w-full h-auto block drop-shadow-xl">
+            
+            <div
+                class="mt-6 bg-white/95 rounded-3xl shadow-[0_18px_45px_rgba(0,0,0,0.22)] border border-pink-200 px-5 py-5 space-y-3 relative overflow-hidden">
+                <!-- subtle gradient border glow -->
+                <div
+                    class="pointer-events-none absolute -inset-[1px] rounded-[1.6rem] border border-transparent"
+                    style="background: linear-gradient(135deg, rgba(255,153,204,0.6), rgba(121,59,189,0.7)); opacity: 0.18;">
+                </div>
+
+                <div class="relative space-y-3">
+                    <p class="text-[1.1rem] font-semibold text-gray-900 leading-snug flex items-center gap-2">
+                        <span
+                            class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-pink-100 text-pink-700 text-lg">❗</span>
+                        <span>अगर आपको ये लक्षण महसूस हो रहे हैं 👇</span>
+                    </p>
+
+                    <div
+                        class="bg-red-50/90 border border-red-100 rounded-2xl px-3.5 py-3 space-y-1.5 text-[0.95rem] text-gray-800 leading-snug">
+                        <ul class="list-none space-y-1.5">
+                            <li>❌ कान में बार-बार दर्द या भारीपन</li>
+                            <li>❌ आवाज़ साफ़ सुनाई नहीं देती</li>
+                            <li>❌ बार-बार infection या पानी निकलना</li>
+                        </ul>
+                    </div>
+
+                    <p class="text-[0.95rem] text-red-600 font-semibold leading-snug">
+                        तो इसे हल्के में न लें 😨
+                    </p>
+                    <p class="text-[0.95rem] text-gray-900 leading-snug">
+                        क्योंकि ये संकेत हो सकते हैं कि—
+                    </p>
+                    <p class="text-[1rem] font-semibold text-purple-800 leading-snug bg-purple-50/80 border border-purple-100 rounded-2xl px-3 py-2">
+                        👉 कान की हड्डी कमजोर, खराब या damage हो रही है।
+                    </p>
+
+                    <p class="text-[0.75rem] text-gray-500 italic mt-1">
+                        जितनी जल्दी ध्यान देंगे, उतनी जल्दी राहत और बेहतर सुनने की उम्मीद बढ़ेगी।
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        </main>
+
+        <footer class="text-white max-w-[450px] mx-auto py-4 px-4 text-center relative"
+            style="background: linear-gradient(135deg, var(--purple-dark) 0%, var(--primary) 50%, var(--light) 100%); border-top: 3px solid var(--purple-dark);">
+
+            <div class="absolute top-0 left-0 right-0 h-1" style="background-color: var(--purple-dark); opacity: 0.9;">
+            </div>
+            <div class="text-[0.6rem] mt-4 font-eczar"
+                style="color: #FFF0F5; text-shadow: 1px 1px 2px rgba(26, 26, 26, 0.5);">
+                <p>⚠️ Disclaimer: This product is not intended to
+                    diagnose, treat, cure, or prevent any disease. Results may vary from person to person. Always
+                    consult with a qualified healthcare professional before starting any new supplement.</p>
+            </div>
+        </footer>
+    </div>
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const overlay = document.getElementById('menuOverlay');
+
+            if (menu.classList.contains('translate-x-full')) {
+                // Opening menu
+                menu.classList.remove('translate-x-full');
+                overlay.classList.remove('bg-black/0', 'pointer-events-none', 'opacity-0');
+                overlay.classList.add('bg-black/50', 'pointer-events-auto', 'opacity-100');
+            } else {
+                // Closing menu
+                menu.classList.add('translate-x-full');
+                overlay.classList.add('bg-black/0', 'pointer-events-none', 'opacity-0');
+                overlay.classList.remove('bg-black/50', 'pointer-events-auto', 'opacity-100');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get all FAQ details elements
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                item.addEventListener('toggle', function () {
+                    if (this.open) {
+                        // Close all other FAQ items when this one opens
+                        faqItems.forEach(otherItem => {
+                            if (otherItem !== this && otherItem.open) {
+                                otherItem.open = false;
+                            }
+                        });
+                    }
+                });
+            });
+        });
+
+        // Close menu when clicking outside (on overlay)
+        document.addEventListener('click', function (event) {
+            const menu = document.getElementById('mobileMenu');
+            const menuToggle = document.getElementById('menuToggle');
+
+            if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
+                if (!menu.classList.contains('translate-x-full')) {
+                    toggleMobileMenu();
+                }
+            }
+        });
+    </script>
+    <script>
+        // Enhanced click animations for mobile devices
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get all step cards
+            const stepCards = document.querySelectorAll('.step-card > div');
+
+            // Add click animations for offer feature cards
+            const offerCards = document.querySelectorAll('.offer-feature-card');
+            
+            offerCards.forEach(card => {
+                let isActive = false;
+                
+                card.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Toggle active state
+                    isActive = !isActive;
+                    
+                    // Remove active state from all other offer cards
+                    offerCards.forEach(otherCard => {
+                        if (otherCard !== card) {
+                            otherCard.classList.remove('offer-card-clicked');
+                        }
+                    });
+                    
+                    // Toggle current card
+                    if (isActive) {
+                        card.classList.add('offer-card-clicked');
+                        
+                        // Trigger shimmer effect
+                        card.classList.add('trigger-shimmer');
+                        setTimeout(() => {
+                            card.classList.remove('trigger-shimmer');
+                        }, 800);
+                    } else {
+                        card.classList.remove('offer-card-clicked');
+                    }
+                });
+                
+                // Add touch feedback for mobile
+                card.addEventListener('touchstart', function() {
+                    this.classList.add('offer-card-pressed');
+                });
+                
+                card.addEventListener('touchend', function() {
+                    setTimeout(() => {
+                        this.classList.remove('offer-card-pressed');
+                    }, 150);
+                });
+            });
+
+            // Add click animations for trust cards
+            const trustCards = document.querySelectorAll('.trust-card');
+            
+            trustCards.forEach(card => {
+                let isActive = false;
+                
+                card.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Toggle active state
+                    isActive = !isActive;
+                    
+                    // Remove active state from all other trust cards
+                    trustCards.forEach(otherCard => {
+                        if (otherCard !== card) {
+                            otherCard.classList.remove('trust-card-clicked');
+                        }
+                    });
+                    
+                    // Toggle current card
+                    if (isActive) {
+                        card.classList.add('trust-card-clicked');
+                        
+                        // Trigger shimmer effect
+                        card.classList.add('trigger-trust-shimmer');
+                        setTimeout(() => {
+                            card.classList.remove('trigger-trust-shimmer');
+                        }, 800);
+                    } else {
+                        card.classList.remove('trust-card-clicked');
+                    }
+                });
+                
+                // Add touch feedback for mobile
+                card.addEventListener('touchstart', function() {
+                    this.classList.add('trust-card-pressed');
+                });
+                
+                card.addEventListener('touchend', function() {
+                    setTimeout(() => {
+                        this.classList.remove('trust-card-pressed');
+                    }, 150);
+                });
+            });
+
+            // Problem cards hover and click animations
+            const problemCards = document.querySelectorAll('.problem-card');
+
+            problemCards.forEach(card => {
+                let isActive = false;
+
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = (e.clientX - rect.left - rect.width / 2) / rect.width;
+                    const y = (e.clientY - rect.top - rect.height / 2) / rect.height;
+
+                    card.style.setProperty('--tilt-x', `${y * -8}deg`);
+                    card.style.setProperty('--tilt-y', `${x * 8}deg`);
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    card.style.setProperty('--tilt-x', '0deg');
+                    card.style.setProperty('--tilt-y', '0deg');
+                });
+
+                card.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    isActive = !isActive;
+
+                    problemCards.forEach(other => {
+                        if (other !== card) {
+                            other.classList.remove('problem-card-active');
+                            other.dataset.active = 'false';
+                        }
+                    });
+
+                    if (isActive) {
+                        card.classList.add('problem-card-active');
+                        card.dataset.active = 'true';
+                    } else {
+                        card.classList.remove('problem-card-active');
+                        card.dataset.active = 'false';
+                    }
+                });
+
+                card.addEventListener('touchstart', function () {
+                    this.classList.add('problem-card-pressed');
+                });
+
+                card.addEventListener('touchend', function () {
+                    setTimeout(() => {
+                        this.classList.remove('problem-card-pressed');
+                    }, 150);
+                });
+            });
+
+            stepCards.forEach(stepCard => {
+                let isActive = false;
+
+                stepCard.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    // Toggle active state
+                    isActive = !isActive;
+
+                    // Remove active state from all other cards
+                    stepCards.forEach(card => {
+                        if (card !== stepCard) {
+                            card.classList.remove('active-click');
+                            card.querySelector('.progress-bar')?.classList.remove('w-full');
+                            card.querySelector('.progress-bar')?.classList.add('w-0');
+                        }
+                    });
+
+                    // Toggle current card
+                    if (isActive) {
+                        stepCard.classList.add('active-click');
+                        // Trigger progress bar animation
+                        const progressBar = stepCard.querySelector('.h-full.bg-gradient-to-r');
+                        if (progressBar) {
+                            progressBar.classList.remove('w-0');
+                            progressBar.classList.add('w-full');
+                        }
+                        // Trigger shimmer effect
+                        const shimmer = stepCard.querySelector('.group-hover\\:animate-\\[shimmer_1s_ease-in-out\\]');
+                        if (shimmer) {
+                            shimmer.style.animation = 'shimmer 1s ease-in-out';
+                            setTimeout(() => {
+                                shimmer.style.animation = '';
+                            }, 1000);
+                        }
+                    } else {
+                        stepCard.classList.remove('active-click');
+                        // Reset progress bar
+                        const progressBar = stepCard.querySelector('.h-full.bg-gradient-to-r');
+                        if (progressBar) {
+                            progressBar.classList.remove('w-full');
+                            progressBar.classList.add('w-0');
+                        }
+                    }
+                });
+            });
+
+            // Add visual feedback for interactive elements
+            const interactiveElements = document.querySelectorAll('.hover\\:scale-105, [class*="hover:scale"]');
+
+            interactiveElements.forEach(element => {
+                element.addEventListener('click', function () {
+                    // Add temporary click animation
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+
+            // Enhanced button click effects
+            const buttons = document.querySelectorAll('button[onclick*="scrollToContent"]');
+            buttons.forEach(button => {
+                button.addEventListener('click', function () {
+                    // Create ripple effect
+                    const ripple = document.createElement('div');
+                    ripple.style.cssText = `
+                        position: absolute;
+                        border-radius: 50%;
+                        background: rgba(255,255,255,0.3);
+                        transform: scale(0);
+                        animation: ripple 0.6s linear;
+                        pointer-events: none;
+                    `;
+
+                    const rect = this.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    ripple.style.width = ripple.style.height = size + 'px';
+                    ripple.style.left = (rect.width / 2 - size / 2) + 'px';
+                    ripple.style.top = (rect.height / 2 - size / 2) + 'px';
+
+                    this.appendChild(ripple);
+
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                });
+            });
+        });
+
+        function scrollToContent() {
+            const contactSection = document.getElementById('contact');
+            if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function scrollToContact() {
+            const contactSection = document.getElementById('contact');
+            if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Header column click animation handler
+        function handleHeaderClick(element, type) {
+            // Remove active state from all header columns
+            document.querySelectorAll('.comparison-header-column').forEach(col => {
+                col.classList.remove('header-clicked');
+                const bgElement = col.querySelector('.absolute.inset-0');
+                if (bgElement) {
+                    bgElement.style.opacity = '0';
+                }
+            });
+            
+            // Add click animation to current column
+            element.classList.add('header-clicked');
+            
+            // Show background color
+            const bgElement = element.querySelector('.absolute.inset-0');
+            if (bgElement) {
+                bgElement.style.opacity = '0.1';
+            }
+            
+            // Create ripple effect
+            createHeaderRipple(element);
+            
+            // Pulse icon
+            const icon = element.querySelector('div[class*="text-2xl"]');
+            if (icon) {
+                icon.style.transform = 'scale(1.3)';
+                setTimeout(() => {
+                    icon.style.transform = 'scale(1)';
+                }, 200);
+            }
+            
+            // Remove click state after animation
+            setTimeout(() => {
+                element.classList.remove('header-clicked');
+                if (bgElement) {
+                    bgElement.style.opacity = '0';
+                }
+            }, 600);
+        }
+
+        function createHeaderRipple(element) {
+            const ripple = document.createElement('div');
+            ripple.className = 'header-ripple';
+            
+            const rect = element.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height) * 1.5;
+            
+            ripple.style.width = ripple.style.height = size + 'px';
+            ripple.style.left = '50%';
+            ripple.style.top = '50%';
+            ripple.style.transform = 'translate(-50%, -50%) scale(0)';
+            
+            element.appendChild(ripple);
+            
+            setTimeout(() => {
+                ripple.style.transform = 'translate(-50%, -50%) scale(1)';
+            }, 10);
+            
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        }
+    </script>
+    <style>
+        /* Click animation styles */
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                transform: translateX(-100%) skewX(-12deg);
+            }
+
+            100% {
+                transform: translateX(200%) skewX(-12deg);
+            }
+        }
+
+        /* Active click state for step cards */
+        .active-click {
+            transform: scale(1.05) !important;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15) !important;
+            z-index: 10;
+        }
+
+        .active-click .absolute.-top-4 {
+            transform: rotate(0deg) !important;
+        }
+
+        /* Touch feedback for mobile */
+        @media (max-width: 768px) {
+            .step-card>div:active {
+                transform: scale(0.98) !important;
+                transition: transform 0.1s ease !important;
+            }
+
+            button:active {
+                transform: scale(0.95) !important;
+                transition: transform 0.1s ease !important;
+            }
+
+            .hover\\:scale-105:active {
+                transform: scale(0.98) !important;
+                transition: transform 0.1s ease !important;
+            }
+        }
+
+        /* Enhanced transitions for click states */
+        .step-card>div {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        }
+
+        .progress-bar {
+            transition: width 1s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        }
+
+        /* Header Column Animations */
+        .comparison-header-column {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .comparison-header-column:hover {
+            transform: scale(1.05) translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .comparison-header-column:active {
+            transform: scale(1.02);
+        }
+
+        .header-clicked {
+            transform: scale(1.08) translateY(-4px) !important;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15) !important;
+            z-index: 10;
+        }
+
+        /* Header ripple effect */
+        .header-ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, transparent 70%);
+            pointer-events: none;
+            transition: transform 0.6s ease-out;
+            z-index: 1;
+        }
+
+        /* Icon animations */
+        .comparison-header-column div[class*="text-2xl"] {
+            transition: transform 0.2s ease-out;
+        }
+
+        .comparison-header-column:hover div[class*="text-2xl"] {
+            transform: scale(1.1);
+        }
+
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            .comparison-header-column:active {
+                transform: scale(1.03) !important;
+            }
+            
+            .header-clicked {
+                transform: scale(1.05) translateY(-2px) !important;
+            }
+        }
+
+        /* Offer Section Animations */
+        .offer-feature-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .offer-feature-card:hover {
+            transform: scale(1.05) translateY(-2px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .offer-feature-card:hover::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.4) 50%, transparent 60%);
+            transform: translateX(-100%);
+            animation: offerShimmer 0.8s ease-in-out;
+        }
+
+        /* Click animations for offer cards */
+        .offer-card-clicked {
+            transform: scale(1.08) translateY(-4px) !important;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+            z-index: 10;
+        }
+
+        .offer-card-pressed {
+            transform: scale(0.98) !important;
+            transition: transform 0.1s ease !important;
+        }
+
+        .trigger-shimmer::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.4) 50%, transparent 60%);
+            transform: translateX(-100%);
+            animation: offerShimmer 0.8s ease-in-out;
+            z-index: 1;
+        }
+
+        /* Enhanced shimmer for click */
+        .offer-card-clicked.trigger-shimmer::before {
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.6) 50%, transparent 70%);
+        }
+
+        @keyframes offerShimmer {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        /* Floating animations for offer elements */
+        @keyframes offerFloat {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            33% {
+                transform: translateY(-10px) rotate(120deg);
+            }
+            66% {
+                transform: translateY(-5px) rotate(240deg);
+            }
+        }
+
+        .floating-element {
+            animation: offerFloat 4s ease-in-out infinite;
+        }
+
+        /* Special button animations */
+        @keyframes buttonPulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+            }
+        }
+
+        button[onclick*="scrollToContact"] {
+            animation: buttonPulse 2s infinite;
+        }
+
+        /* Trust Section Animations */
+        .trust-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .trust-card:hover {
+            transform: scale(1.05) translateY(-2px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .trust-card:hover::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.5) 50%, transparent 60%);
+            transform: translateX(-100%);
+            animation: trustShimmer 0.8s ease-in-out;
+        }
+
+        /* Click animations for trust cards */
+        .trust-card-clicked {
+            transform: scale(1.08) translateY(-4px) !important;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+            z-index: 10;
+        }
+
+        .trust-card-pressed {
+            transform: scale(0.98) !important;
+            transition: transform 0.1s ease !important;
+        }
+
+        .trigger-trust-shimmer::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.5) 50%, transparent 60%);
+            transform: translateX(-100%);
+            animation: trustShimmer 0.8s ease-in-out;
+            z-index: 1;
+        }
+
+        /* Enhanced shimmer for click */
+        .trust-card-clicked.trigger-trust-shimmer::before {
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.7) 50%, transparent 70%);
+        }
+
+        @keyframes trustShimmer {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        /* Certificate image hover effects */
+        .trust-card img {
+            transition: transform 0.3s ease;
+        }
+
+        .trust-card:hover img {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        /* Trust badge animations */
+        .trust-card h5 span {
+            transition: transform 0.2s ease;
+        }
+
+        .trust-card:hover h5 span {
+            transform: scale(1.2);
+        }
+    </style>
+</body>
+
+</html>
